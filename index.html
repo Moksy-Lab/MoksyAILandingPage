@@ -231,6 +231,47 @@
   </footer>
 </section>
 
+<!-- Terms and Conditions Modal -->
+<div id="termsModal" class="terms-modal" tabindex="-1" role="dialog" aria-modal="true" style="display:none;">
+  <div class="terms-modal-dialog">
+    <div class="terms-modal-content">
+      <button class="terms-modal-close" aria-label="Close">&times;</button>
+      <h3 class="terms-modal-title">Terms and Conditions</h3>
+      <ul class="terms-list">
+        <li><i class="fas fa-check-circle"></i> You agree to use Moksy.AI for lawful purposes only.</li>
+        <li><i class="fas fa-check-circle"></i> You retain ownership of your content, but grant Moksy.AI a license to display it.</li>
+        <li><i class="fas fa-check-circle"></i> No harmful, offensive, or illegal content is allowed.</li>
+        <li><i class="fas fa-check-circle"></i> Moksy.AI is not liable for user-generated content.</li>
+        <li><i class="fas fa-check-circle"></i> Your data is handled according to our privacy policy.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+// Modal open/close logic
+const termsLink = document.querySelector('.footer-link[href="#terms"]');
+const termsModal = document.getElementById('termsModal');
+const closeModalBtn = document.querySelector('.terms-modal-close');
+
+if (termsLink && termsModal && closeModalBtn) {
+  termsLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    termsModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  });
+  closeModalBtn.addEventListener('click', function() {
+    termsModal.style.display = 'none';
+    document.body.style.overflow = '';
+  });
+  termsModal.addEventListener('click', function(e) {
+    if (e.target === termsModal) {
+      termsModal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
+}
+</script>
+
   <!-- Scripts -->
 <!-- jQuery Slim 3.5.1 (Required by Bootstrap 4) -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
