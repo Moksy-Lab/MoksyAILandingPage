@@ -1,0 +1,894 @@
+@import url('./typography.css');
+@import url('./layout.css');
+
+/* ================================================
+Moksy.AI Landing Page Styles - Bolt-inspired Layout
+================================================ */
+
+/* ===== NAVBAR STYLES ===== */
+#navbar {
+  background-color: var(--color-background-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--spacing-md) 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+#navbar .navbar {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+}
+
+#navbar .navbar-brand {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+#navbar .navbar-brand:hover {
+  color: var(--color-hover-primary);
+}
+
+#navbar .navbar-brand img {
+  height: 40px;
+  width: auto;
+}
+
+#navbar .navbar-nav {
+  align-items: center;
+}
+
+#navbar .nav-item {
+  margin-left: var(--spacing-lg);
+}
+
+#navbar .nav-link {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  transition: all 0.3s ease;
+}
+
+#navbar .nav-link:hover {
+  color: var(--color-primary);
+  background-color: var(--color-background-secondary);
+}
+
+#navbar .navbar-toggler {
+  display: none !important;
+}
+
+#navbar .navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-border-focus);
+}
+
+/* Futuristic Toggler Styles */
+#navbar .futuristic-toggler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 0;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+#navbar .futuristic-toggler::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#navbar .futuristic-toggler:hover::before {
+  opacity: 1;
+}
+
+#navbar .futuristic-toggler:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 162, 255, 0.3);
+}
+
+#navbar .toggler-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+#navbar .toggler-icon span {
+  width: 100%;
+  height: 2px;
+  background: white;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animated hamburger to X transformation */
+#navbar .futuristic-toggler[aria-expanded="true"] .toggler-icon span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#navbar .futuristic-toggler[aria-expanded="true"] .toggler-icon span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+#navbar .futuristic-toggler[aria-expanded="true"] .toggler-icon span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Glowing effect on hover */
+#navbar .futuristic-toggler::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary), var(--color-tertiary));
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#navbar .futuristic-toggler:hover::after {
+  opacity: 0.5;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===== PROMPT SECTION STYLES ===== */
+#prompt {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background-primary);
+  padding: var(--spacing-xxl) 0;
+}
+
+#prompt .prompt-content {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 1.2rem;
+}
+
+#prompt .prompt-title {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.2;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+#prompt .prompt-subtitle {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+  line-height: var(--line-height-base);
+}
+
+#prompt .prompt-input-wrapper {
+  max-width: 600px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+#prompt .prompt-input {
+  font-family: var(--font-primary);
+  font-size: 1.35rem;
+  padding: 2.5rem 5.5rem 3.5rem 2.5rem;
+  border: none;
+  border-radius: 2.5rem;
+  background: transparent;
+  box-shadow: none;
+  width: 100%;
+  min-height: 160px;
+  outline: none;
+  color: var(--color-text-primary);
+  resize: none;
+  line-height: 1.5;
+  height: 160px;
+  overflow-y: auto;
+  transition: none;
+}
+
+#prompt .prompt-input:focus {
+  outline: none;
+  background: transparent;
+}
+
+#prompt .prompt-input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+  font-size: var(--font-size-base);
+  vertical-align: top;
+}
+
+#prompt .prompt-button {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius-lg);
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+#prompt .prompt-button:hover {
+  background-color: var(--color-hover-primary);
+  border-color: var(--color-hover-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+#prompt .prompt-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 162, 255, 0.3);
+}
+
+#prompt .prompt-examples {
+  margin-top: var(--spacing-lg);
+}
+
+#prompt .examples-text {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* ===== FOOTER STYLES ===== */
+#footer {
+  background: #eceff3;
+  border-top: 1px solid #e2e8f0;
+  padding: 0;
+}
+
+.footer {
+  width: 100%;
+  padding: 22px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.footer-link {
+  color: #2563eb;
+  text-decoration: none;
+  margin-left: 8px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  #navbar .nav-item {
+    margin-left: 0;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  #navbar .navbar-nav {
+    padding-top: var(--spacing-md);
+  }
+  
+  #navbar .futuristic-toggler {
+    width: 45px;
+    height: 45px;
+  }
+  
+  #navbar .toggler-icon {
+    width: 18px;
+    height: 18px;
+    gap: 3px;
+  }
+  
+  #prompt .prompt-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  #prompt .prompt-subtitle {
+    font-size: var(--font-size-md);
+  }
+  
+  #prompt .prompt-input,
+  #prompt .prompt-button {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+  
+  #footer .footer-links {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  #prompt {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  #prompt .prompt-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  #prompt .prompt-subtitle {
+    font-size: var(--font-size-base);
+  }
+  
+  #prompt .prompt-input-wrapper {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 991.98px) {
+  #navbar .navbar-toggler {
+    display: flex !important;
+  }
+}
+
+/* Always show FAQ menu on desktop, collapse on mobile */
+@media (max-width: 991.98px) {
+  #navbar .navbar-collapse {
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin-top: 0;
+    padding: 0;
+  }
+  #navbar .navbar-nav {
+    width: 100%;
+    text-align: right;
+  }
+  #navbar .nav-item {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#prompt .prompt-content {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+#prompt .prompt-input-wrapper {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+#prompt .prompt-examples {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* ===== PROMPT BOX WITH ANIMATED GRADIENT BORDER ===== */
+#prompt .prompt-box {
+  margin: 0 auto var(--spacing-xl);
+  padding: 0;
+  border-radius: 2.5rem;
+  background: #fff;
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  min-height: 200px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  overflow: visible;
+}
+
+#prompt .prompt-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  border-radius: 2.5rem 2.5rem 0 0;
+  background: linear-gradient(90deg, #00A2FF, #007ACC, #005F99, #00A2FF);
+  background-size: 300% 300%;
+  animation: gradientTopBar 4s linear infinite;
+  z-index: 2;
+}
+
+@keyframes gradientTopBar {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#prompt .prompt-box .input-group {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  background: transparent;
+  border-radius: 2.5rem;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+}
+
+#prompt .prompt-input {
+  font-family: var(--font-primary);
+  font-size: 1.35rem;
+  padding: 2.5rem 5.5rem 3.5rem 2.5rem;
+  border: none;
+  border-radius: 2.5rem;
+  background: transparent;
+  box-shadow: none;
+  width: 100%;
+  min-height: 160px;
+  outline: none;
+  color: var(--color-text-primary);
+  resize: none;
+  line-height: 1.5;
+  height: 160px;
+  overflow-y: auto;
+  transition: none;
+}
+
+#prompt .prompt-input:focus {
+  outline: none;
+  background: transparent;
+}
+
+#prompt .prompt-input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+  font-size: var(--font-size-base);
+  vertical-align: top;
+}
+
+#prompt .prompt-button {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  height: 44px;
+  width: 44px;
+  font-size: 1.3rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px 0 rgba(0,162,255,0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+  z-index: 4;
+}
+
+#prompt .prompt-button.visible {
+  display: flex !important;
+}
+
+#prompt .input-group-append {
+  position: relative;
+}
+
+/* Hide scrollbar unless needed */
+#prompt .prompt-input::-webkit-scrollbar {
+  width: 6px;
+  background: transparent;
+}
+#prompt .prompt-input::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 3px;
+}
+#prompt .prompt-input {
+  scrollbar-width: thin;
+  scrollbar-color: #e0e0e0 transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  #prompt .prompt-box {
+    max-width: 100%;
+    min-height: 120px;
+    border-radius: 1.5rem;
+  }
+  #prompt .prompt-box .input-group {
+    border-radius: 1.5rem;
+  }
+  #prompt .prompt-input {
+    font-size: 1.1rem;
+    padding: 1.5rem 3.5rem 2.5rem 1.2rem;
+    min-height: 80px;
+    border-radius: 1.5rem;
+    height: 80px;
+  }
+  #prompt .prompt-button {
+    right: 1rem;
+    bottom: 1rem;
+    height: 38px;
+    width: 38px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #prompt .prompt-box {
+    min-height: 140px;
+    border-radius: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  #prompt .prompt-input {
+    font-size: 1.1rem;
+    padding: 1.2rem 3.2rem 2.2rem 1.2rem;
+    min-height: 90px;
+    border-radius: 1rem;
+    height: 90px;
+  }
+  #prompt .prompt-button {
+    right: 0.7rem;
+    bottom: 0.7rem;
+    height: 38px;
+    width: 38px;
+    font-size: 1.2rem;
+  }
+}
+
+
+.prompt-box {
+  position: relative;
+  background: #18191c; /* or your dark background */
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  /* Remove any default border */
+  border: none;
+}
+
+.prompt-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;   /* length of the accent */
+  height: 3px;   /* thickness of the accent */
+  background: #4f8cff; /* your accent color */
+  border-radius: 2px;
+}
+
+.prompt-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;    /* thickness of the accent */
+  height: 40px;  /* length of the accent */
+  background: #4f8cff; /* your accent color */
+  border-radius: 2px;
+}
+
+/* Gallery Section */
+#gallery {
+  width: 100vw;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+.gallery-container {
+  width: 100vw;
+  max-width: 100vw;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: visible;
+  min-height: 300px;
+}
+
+.gallery-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 100vw;
+  padding: 10px 0 60px 0;
+  margin-left: 40px;
+}
+
+.gallery-card {
+  width: 350px;
+  height: 220px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 1.5px 6px rgba(0,0,0,0.08);
+  background: #ededed;
+  margin-left: -80px;
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s, opacity 0.3s;
+  pointer-events: auto;
+  opacity: 1;
+  filter: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-card:first-child {
+  margin-left: 0;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-card--faded {
+  opacity: 0.45;
+  filter: blur(1.5px);
+  pointer-events: none;
+}
+
+.gallery-gradient {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 100%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+  .gallery-card {
+    width: 260px;
+    height: 160px;
+    margin-left: -50px;
+  }
+}
+
+@media (max-width: 800px) {
+  .gallery-card {
+    width: 160px;
+    height: 100px;
+    margin-left: -30px;
+  }
+  .gallery-row {
+    padding: 5px 0 40px 0;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 420px;
+    height: auto;
+    width: 100vw;
+    max-width: 100vw;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0 auto;
+    background: transparent;
+  }
+  .gallery-card {
+    position: static !important;
+    width: 90vw;
+    max-width: 340px;
+    min-width: 0;
+    margin: 0 0 18px 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10), 0 1.5px 6px rgba(0,0,0,0.08);
+    opacity: 1;
+    filter: none;
+    z-index: 1;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+  }
+  .gallery-card:last-child {
+    margin-bottom: 0;
+  }
+  .gallery-card--faded {
+    opacity: 0.4;
+    filter: blur(1.5px);
+  }
+  .gallery-gradient {
+    height: 60px;
+  }
+  .prompt-content {
+    margin-bottom: 0.5rem;
+  }
+  #gallery {
+    margin-top: 0.5rem;
+  }
+}
+
+/* FAQ Section */
+#faq {
+  background: #fff;
+  padding: 64px 0 64px 0;
+}
+.faq-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.faq-header {
+  margin-bottom: 40px;
+}
+.faq-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #23272f;
+  margin-bottom: 8px;
+}
+.faq-subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+}
+.faq-list {
+  width: 100%;
+}
+.faq-item {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(30,34,90,0.07), 0 1.5px 6px rgba(0,0,0,0.04);
+  margin-bottom: 18px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.faq-item:last-child {
+  margin-bottom: 0;
+}
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #23272f;
+  padding: 20px 24px;
+  cursor: pointer;
+  background: #f8fafc;
+  border: none;
+  outline: none;
+  transition: background 0.2s;
+}
+.faq-question:hover, .faq-question[aria-expanded="true"] {
+  background: #f0f6ff;
+}
+.faq-question i {
+  color: #4f8cff;
+  font-size: 1.1rem;
+  margin-left: 12px;
+  transition: transform 0.3s;
+}
+.faq-question[aria-expanded="true"] i, .faq-question:not(.collapsed) i {
+  transform: rotate(180deg);
+}
+.faq-answer {
+  padding: 18px 24px 20px 24px;
+  font-size: 1rem;
+  color: #4b5563;
+  background: #fff;
+  border-top: 1px solid #f1f5f9;
+  animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 600px) {
+  #faq {
+    padding: 36px 0 36px 0;
+  }
+  .faq-header {
+    margin-bottom: 22px;
+  }
+  .faq-title {
+    font-size: 1.2rem;
+  }
+  .faq-question {
+    font-size: 0.98rem;
+    padding: 14px 12px;
+  }
+  .faq-answer {
+    font-size: 0.97rem;
+    padding: 12px 12px 14px 12px;
+  }
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+#gallery, .gallery-container, .gallery-row {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* On mobile, ensure gallery cards do not overflow */
+@media (max-width: 700px) {
+  .gallery-card {
+    left: 50vw !important;
+    max-width: 95vw;
+    width: 95vw;
+    min-width: 0;
+  }
+  .gallery-row {
+    max-width: 100vw;
+    left: 0;
+    right: 0;
+  }
+}

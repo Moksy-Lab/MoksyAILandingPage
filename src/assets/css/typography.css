@@ -1,0 +1,483 @@
+/* ================================================
+Covers all HTML content tags used in landing pages that are Compatible with Bootstrap 4
+================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    /* Font Families */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+
+    /* Font Sizes */
+    --font-size-xs: 0.75rem; /* 12px *//* Extra Small Text */
+    --font-size-sm: 0.875rem;/* 14px *//* Small Text */
+    --font-size-base: 1rem;/* 16px *//* Body Text (Normal) */
+    --font-size-md: 1.125rem;/* 18px *//* Medium Text */
+    --font-size-lg: 1.5rem;/* 24px *//* Large Heading */
+    --font-size-xl: 2rem;/* 32px *//* Extra Large Heading */
+    --font-size-xxl: 3rem;/* 48px *//* Hero Title */
+
+    /* Font Weights */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+
+    /* Line Heights */
+    --line-height-xs: 1.2;
+    --line-height-sm: 1.4;
+    /* Tight line spacing */
+    --line-height-base: 1.6;
+    /* Tight line spacing */
+    --line-height-lg: 1.8;
+    /* Default for body text */
+    /* Relaxed spacing (e.g. hero sections) */
+
+    /* Spacing  */
+    --spacing-xs: 0.25rem;  /* 4px */
+    --spacing-sm: 0.5rem;   /* 8px */
+    --spacing-md: 1rem;     /* 16px */
+    --spacing-lg: 1.5rem;   /* 24px */
+    --spacing-xl: 2rem;     /* 32px */
+    --spacing-xxl: 3rem;    /* 48px */
+ 
+    /* Letter Spacing */
+    --letter-spacing-tight: -0.5px;
+    --letter-spacing-normal: 0px;
+    --letter-spacing-wide: 0.5px;
+
+    /* Brand Colors */
+    --color-primary: #00A2FF;
+    --color-secondary: #007ACC;
+    --color-tertiary: #005F99;
+
+    /* Background Colors */
+    --color-white: #F5F5F5;
+    --color-background-primary: #FFFFFF;
+    --color-background-secondary: #F0F4F8;
+
+    /* Text Colors */
+    --color-text-primary: #212121;
+    --color-text-secondary: #757575;
+
+    /* Status Colors */
+    --color-alert: #D32F2F;
+    --color-warning: #FFA000;
+    --color-success: #4CAF50;
+    --color-info: #2196F3;
+    --color-disabled: #BDBDBD;
+
+    /* UI States */
+    --hover: #0086CC;
+    --focus-color: #2196F3;
+
+    /* Borders */
+    --border-color: #E0E0E0;
+    --input-background: #FFFFFF;
+    --input-border: #BDBDBD;
+
+    /* Shadows */
+    --shadow: rgba(0, 0, 0, 0.2);
+
+    /* Dark Mode (Optional Extension Later) */
+    --dark: #353535;
+
+    /* Neutral Colors */
+    --neutral-light: #e0e0e0; /* Dividers, borders, light backgrounds */
+    --neutral-dark: #616161; /* Secondary text, muted labels */
+
+    /* Link Color */
+    --color-link: #007ACC; /* Same as secondary, or customise separately */
+
+    /* Hover States */
+    --color-hover-primary: #0086CC; /* Already defined as --hover, but now named clearly */
+    --color-hover-secondary: #0066B2; /* Darker hover for secondary buttons */
+
+    /* Disabled States */
+    --color-disabled-background: #E0E0E0; /* Light grey background for disabled buttons */
+    --color-disabled-text: #9E9E9E; /* Muted text for disabled elements */
+
+    /* Border States */
+    --color-border-hover: #90CAF9; /* Light blue for focused or hovered input borders */
+    --color-border-focus: #42A5F5; /* Stronger blue for focused inputs */
+
+    /* Shadows */
+    --shadow-light: rgba(0, 0, 0, 0.05); /* Soft card shadow */
+    --shadow-dark: rgba(0, 0, 0, 0.3); /* Deeper modal or dropdown shadow */
+
+    /* Container Widths */
+    --container-width: 1200px; /* Max width for landing page containers */
+    --gutter-width: 24px; /* Space between columns or sections */
+
+    /* Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+
+     /* Button Border Radius Tokens*/
+
+    --btn-radius-xs: 2px;    /* Very small rounding (almost sharp) */
+    --btn-radius-sm: 4px;    /* Slightly rounded (small buttons) */
+    --btn-radius-md: 8px;    /* Normal rounded buttons (default) */
+    --btn-radius-lg: 16px;   /* Big pill-shaped buttons */
+    --btn-radius-full: 9999px; /* Full pill shape (for rounded buttons like "Join Now") */
+
+    /* Opacity Levels */
+    --opacity-disabled: 0.6; /* For making disabled buttons semi-transparent */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+html {
+    scroll-behavior: smooth;
+    font-size: 100%; /* Keep 16px = 1rem */
+  }
+body {
+    min-height: 100vh;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--color-text-primary);
+    background-color: var(--color-background-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+/* ===== Headings ===== */
+  h1, h2 {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    line-height: var(--line-height-xs);
+    margin-bottom: var(--gutter-width);
+    letter-spacing: var(--letter-spacing-tight);
+    text-transform: capitalize; 
+  }
+  
+  h1 {
+    font-size: var(--font-size-xxl); /* 48px */
+  }
+  
+  h2 {
+    font-size: var(--font-size-xl); /* 32px */
+  }
+
+  h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-secondary);
+    line-height: var(--line-height-sm);
+    margin-bottom: var(--gutter-width);
+    letter-spacing: var(--letter-spacing-normal);
+    text-transform: none;
+  }
+  
+  h3 { font-size: var(--font-size-lg); /* 24px */ }
+  h4 { font-size: var(--font-size-md); /* 18px */ }
+  h5 { font-size: var(--font-size-base); /* 16px */ }
+  h6 { font-size: var(--font-size-sm); /* 14px */ 
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);}
+
+
+/* ===== Paragraphs ===== */
+p {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  margin-bottom: var(--gutter-width);
+  max-width: 45rem; /* ✅ Scalable paragraph width */
+}
+
+.lead {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-primary);
+  line-height: var(--line-height-lg);
+  max-width: 720px; /* 🆕 Optional for consistency */
+}
+
+/* ===== Inline Text Elements ===== */
+span {
+  display: inline;
+}
+
+small {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+em {
+  font-style: italic;
+}
+
+mark {
+  background-color: var(--color-warning);
+  padding: 0 var(--spacing-sm);
+}
+
+/* Abbreviation */
+abbr[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+  text-decoration: underline dotted; /* Better for accessibility */
+}
+
+/* Line Break */
+br {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Optional highlight class */
+.highlight {
+  background-color: var(--color-primary);
+  color: var(--color-background-primary);
+  padding: 0 var(--spacing-xs);
+}    
+
+/*  Links  */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  letter-spacing: var(--letter-spacing-normal);
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-hover-primary);
+  text-decoration: underline;
+}
+
+/*  Blockquotes  */
+blockquote {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary);
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--gutter-width);
+  margin: var(--gutter-width) 0;
+  max-width: 45rem;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* ===== Lists ===== */
+ul, ol {
+  padding-left: var(--gutter-width);
+  margin-bottom: var(--gutter-width);
+}
+
+li {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ===== Media Elements ===== */
+img, picture, video, canvas, iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+video {
+  box-shadow: 0 4px 6px var(--shadow);
+}
+
+audio {
+  width: 100%;
+}
+
+/* ===== Buttons ===== */
+button, .btn {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== Forms ===== */
+form {
+  width: 100%;
+}
+
+input, textarea, select, option {
+  font: inherit;
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--input-background);
+  border: 1px solid var(--input-border);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-sm);
+  appearance: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-border-focus);
+  outline: none;
+}
+
+/* Label */
+label {
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-xs);
+  display: inline-block;
+}
+
+/* ===== Structural Tags ===== */
+header, footer, main, section, article, aside, nav, div {
+  display: block;
+}
+
+/* ===== Special Interactive Elements ===== */
+details, summary {
+  font-size: var(--font-size-base);
+  cursor: pointer;
+}
+
+/* Dialogs */
+dialog {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  overflow: hidden;
+}
+
+/* ===== Progress & Meter Elements ===== */
+progress, meter {
+  width: 100%;
+  height: 1.25rem;
+}
+
+/* ===== Divider ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--neutral-light);
+  margin: var(--gutter-width) 0;
+}
+
+/* ===== Form Grouping ===== */
+fieldset {
+  border: 1px solid var(--neutral-light);
+  padding: var(--gutter-width);
+  margin-bottom: var(--gutter-width);
+  border-radius: var(--border-radius-md);
+}
+
+legend {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-semibold);
+  padding: 0 var(--spacing-sm);
+}
+
+/* ===== Tables ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--gutter-width);
+}
+
+thead {
+  background-color: var(--color-background-secondary);
+}
+
+th, td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--neutral-light);
+  vertical-align: top;
+}
+
+/* Section Spacing System (Bootstrap 4 Compatible) */
+section {
+  padding-top: var(--spacing-lg); /* 32px */
+  padding-bottom: var(--spacing-lg);
+}
+
+/* Tighter Sections (Optional) */
+.section-tight {
+  padding-top: var(--spacing-md); /* 16px */
+  padding-bottom: var(--spacing-md);
+}
+
+/* Loose Sections (Hero, Important sections) */
+.section-loose {
+  padding-top: var(--spacing-xl); /* 48px */
+  padding-bottom: var(--spacing-xl);
+}
+
+/* Space between consecutive sections */
+section + section {
+  margin-top: var(--spacing-md); /* 16px */
+}
+
+
+.navbar {
+  margin: 0;
+  padding: 0;
+}
+
+.hero-section {
+  padding-top: var(--spacing-xl); /* 48px */
+  padding-bottom: var(--spacing-xl);
+  background-color: var(--color-background-primary);
+}
+
+.footer {
+  padding-top: var(--spacing-md); /* 16px */
+  padding-bottom: 0;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+/* Remove Padding */
+.section-no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Add Extra Margin for Special Cases */
+.section-extra-margin {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Universal Responsive Wrapper */
+.responsive-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  padding-bottom: var(--spacing-sm); /* Optional: small space if scrollbar appears */
+}
+
+/* Ensure child elements behave */
+.responsive-wrapper > table,
+.responsive-wrapper > img,
+.responsive-wrapper > iframe,
+.responsive-wrapper > video,
+.responsive-wrapper > canvas {
+  min-width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
